@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PDF" customModuleProvider="target">
+            <connections>
+                <outlet property="JumpingPage" destination="1u4-EW-YQy" id="K8R-A2-N1N"/>
+                <outlet property="LoadTxt" destination="ARh-gu-snd" id="rls-oB-s8B"/>
+                <outlet property="NextP" destination="7Z5-HR-Bpc" id="TTT-ZB-Bfe"/>
+                <outlet property="OpenFiling" destination="IAo-SY-fd9" id="mWW-db-FIz"/>
+                <outlet property="PreviousP" destination="ZZR-rt-IHT" id="9bY-uT-acY"/>
+                <outlet property="SearchNextItem" destination="sef-4k-9Ep" id="nCU-Vz-AUE"/>
+                <outlet property="SearchPreviousItem" destination="mVu-Bz-e2e" id="JDI-8k-3u1"/>
+                <outlet property="Zoomfiting" destination="VVS-gb-TIf" id="19D-wa-Ewv"/>
+                <outlet property="Zooming" destination="VZZ-lr-bkk" id="0yX-BQ-Kk4"/>
+                <outlet property="Zoomouting" destination="y1Q-n7-3Gn" id="2iZ-jr-zVb"/>
+            </connections>
+        </customObject>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+            <items>
+                <menuItem title="PDFViewer" id="1Xt-HY-uBw">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="PDFViewer" systemMenu="apple" id="uQy-DD-JDr">
+                        <items>
+                            <menuItem title="About PDF" id="5kV-Vb-QxS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="aboutpanel:" target="Voe-Tx-rLC" id="a4m-JF-5oC"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                            <menuItem title="Hide PDF" keyEquivalent="h" id="Olw-nP-bQN">
+                                <connections>
+                                    <action selector="hide:" target="-1" id="PnN-Uc-m68"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="VT4-aY-XCT"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="Kd2-mp-pUS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-1" id="Dhg-Le-xox"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                            <menuItem title="Quit PDF" keyEquivalent="q" id="4sb-4s-VLi">
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="Te7-pn-YzF"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="File" id="dMs-cI-mzQ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="File" id="bib-Uj-vzu">
+                        <items>
+                            <menuItem title="New" keyEquivalent="n" id="Was-JA-tGl">
+                                <connections>
+                                    <action selector="NewWindow:" target="Voe-Tx-rLC" id="6ho-kQ-YhZ"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
+                                <connections>
+                                    <action selector="browseFile:" target="-1" id="cFO-ea-jfL"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="LoadTxt" keyEquivalent="t" id="ARh-gu-snd">
+                                <connections>
+                                    <action selector="loadnotes:" target="-1" id="DIS-MA-k5g"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
+                            <menuItem title="Close" keyEquivalent="w" id="DVo-aG-piG">
+                                <connections>
+                                    <action selector="performClose:" target="-1" id="HmO-Ls-i7Q"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Edit" id="5QF-Oa-p0T">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Edit" id="W48-6f-4Dl">
+                        <items>
+                            <menuItem title="Bookmark" keyEquivalent="b" id="uRl-iY-unG">
+                                <connections>
+                                    <action selector="BookMark:" target="-1" id="giV-24-7ZL"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Find" id="uwA-4d-U9k">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Find" id="4Ao-zu-bdZ">
+                                    <items>
+                                        <menuItem title="FindNext" id="sef-4k-9Ep">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="searchnavr:" target="-1" id="HSN-yh-ngg"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="FindPrevious" id="mVu-Bz-e2e">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="searchnavl:" target="-1" id="KIv-wQ-0KW"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="View" id="SX4-GU-Aej">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="View" id="3sa-LP-Gw3">
+                        <items>
+                            <menuItem title="PreviousPage" keyEquivalent="k" id="ZZR-rt-IHT">
+                                <connections>
+                                    <action selector="PreviousPage:" target="-1" id="Y2s-c0-aHy"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="NextPage" keyEquivalent="l" id="7Z5-HR-Bpc">
+                                <connections>
+                                    <action selector="NextPage:" target="-1" id="D0I-ud-tyq"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="JumpToPage" keyEquivalent="j" id="1u4-EW-YQy">
+                                <connections>
+                                    <action selector="JumpToPage:" target="-1" id="3dJ-x4-tfR"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Window" id="jDg-nx-uUT">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Window" systemMenu="window" id="PUO-SW-a3W">
+                        <items>
+                            <menuItem title="Minimize" keyEquivalent="m" id="84s-BI-2Sf">
+                                <connections>
+                                    <action selector="performMiniaturize:" target="-1" id="fvy-Wx-AKB"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Zoom out" keyEquivalent="-" id="y1Q-n7-3Gn">
+                                <connections>
+                                    <action selector="Zoomout:" target="-1" id="1Jl-VG-7Cg"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Zoom in" keyEquivalent="+" id="VZZ-lr-bkk">
+                                <connections>
+                                    <action selector="Zoomin:" target="-1" id="L3D-so-LFf"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Zoom fit" keyEquivalent="f" id="VVS-gb-TIf">
+                                <connections>
+                                    <action selector="ZoomFit:" target="-1" id="3jK-jw-dQr"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Help" id="wpr-3q-Mcd">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
+                        <items>
+                            <menuItem title="PDF Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                <connections>
+                                    <action selector="showHelp:" target="-1" id="y7X-2Q-9no"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+            <connections>
+                <outlet property="delegate" destination="-2" id="th2-Cs-PE3"/>
+            </connections>
+        </menu>
+    </objects>
+</document>
